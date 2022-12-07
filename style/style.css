@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --bg:#C21010;
+    --fg:#FFFDE3;
+    --pC:#CFE8A9;
+    --sC:#E64848;
+    --c1:#92B4EC;
+    --c2:#FFE69A;
+    --c3:#FFD24C;
+}
+
+.body{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: #F2E8C6;
+    height: 100vh;
+
+}
+/*Drawing the space for the NavBar with telling the element from which column to which column does it need to exist*/
+.NavBar {
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 1;
+    background-color: var(--bg);
+}
+.LeftSideBar{
+    grid-row: 2 / span 10;
+    grid-column: 1 / span 1;
+    background-color: var(--bg);
+}
+.RightSideBar{
+    grid-row: 2 / span 10;
+    grid-column: 12/ span 1;
+    background-color: var(--bg);
+}
+.PageBody{
+    grid-row: 2 / span 10;
+    grid-column: 2 / span 10;
+    background-color: var(--pC);
+}
+/*srtyle for PageBody*/
+.PageBody{
+    background: radial-gradient(circle at top, var(--fg), var(--pC), var(--c1), transparent),
+    radial-gradient(circle at top, var(--c3), var(--c2), var(--bg));
+    -webkit-animation: AnimatedBG 12s ease-in-out infinite;
+    background-size: 400% 400%;
+}
+
+.Banner {
+    text-align: center;
+    font-size: 14pt;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@-webkit-keyframes AnimatedBG {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 120% 99%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.Footer{
+    grid-column: 1 / span 12;
+    grid-row: 12 / span 1;
+    background-color: var(--bg);
+}
